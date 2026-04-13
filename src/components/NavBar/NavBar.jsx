@@ -1,37 +1,43 @@
+"use client";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
 import Link from "next/link";
-
-const navbar = [
-  {
-    id: 1,
-    name: "Home",
-    path: "/",
-  },
-  {
-    id: 2,
-    name: "Timeline",
-    path: "/timeline",
-  },
-  {
-    id: 3,
-    name: "Stats",
-    path: "/stats",
-  },
-];
-
-const navLinks = navbar.map((nav) => (
-  <li className="mr-5" key={nav.id}>
-    <Link
-      className="text-[#13131395] dark:text-white py-2 font-semibold  dark:hover:text-white"
-      href={nav.path}
-    >
-      {nav.name}
-    </Link>
-  </li>
-));
+import { usePathname } from "next/navigation";
+import { RiHome2Line } from "react-icons/ri";
+import { LuClock3 } from "react-icons/lu";
+import { LuChartSpline } from "react-icons/lu";
 
 function NavBar() {
+  const currentPath = usePathname();
+
+  console.log("Current Path:", currentPath);
+
+  const navLinks = (
+    <div className="flex flex-col lg:flex-row gap-3 lg:gap-5">
+      <li
+        className={`flex items-center rounded-md p-1 font-semibold    text-[#64748B] ${currentPath === "/" ? "text-white bg-green-800" : ""}`}
+      >
+        <Link href="/">
+          <RiHome2Line /> Home
+        </Link>
+      </li>
+      <li
+        className={`flex items-center rounded-md p-1 font-semibold   text-[#64748B] ${currentPath === "/timeline" ? "text-white bg-green-800" : ""}`}
+      >
+        <Link href="/timeline">
+          <LuClock3 /> Timeline
+        </Link>
+      </li>
+      <li
+        className={`flex items-center rounded-md p-1 font-semibold   text-[#64748B] ${currentPath === "/stats" ? "text-white bg-green-800" : ""}`}
+      >
+        <Link href="/stats">
+          <LuChartSpline /> Stats
+        </Link>
+      </li>
+    </div>
+  );
+
   return (
     <nav className="bg-base-100 shadow-sm sticky top-0 z-50">
       <div className="navbar bg-base-100 mx-auto container">
@@ -45,44 +51,25 @@ function NavBar() {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {" "}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
             <ul
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {navLinks}
             </ul>
           </div>
-          <Image src={Logo} alt="Keen Keeper Logo" loading="eager"  />
+          <Image src={Logo} alt="Keen Keeper Logo" loading="eager" />
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {navLinks}
-          </ul>
+          <ul className="menu menu-horizontal">{navLinks}</ul>
         </div>
       </div>
     </nav>
