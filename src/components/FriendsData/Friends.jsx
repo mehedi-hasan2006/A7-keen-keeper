@@ -1,10 +1,19 @@
+import Friend from "./Friend";
+
 async function Friends() {
-  // const res = await fetch("/friends.json");
-  // const data = await res.json();
-  // console.log(data);
+  const res = await fetch("http://localhost:3000/friends.json");
+  const data = await res.json();
+
   return (
-    <div>
-      {/* <div>{data.map((friend) => console.log(friend))}</div> */}
+    <div className="pb-10 px-5">
+      <div className="text-2xl font-semibold pb-3 text-[#1F2937]">
+        Your Friends
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {data.map((friend) => (
+          <Friend key={friend.id} friend={friend} />
+        ))}
+      </div>
     </div>
   );
 }

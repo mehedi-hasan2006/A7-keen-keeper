@@ -20,7 +20,7 @@ function ProgressNumber() {
         </div>
       </div>
 
-      <div className="divider py-5"></div>
+      <div className="divider py-5 px-5"></div>
     </div>
   );
 }
