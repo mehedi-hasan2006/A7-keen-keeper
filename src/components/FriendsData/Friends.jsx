@@ -6,7 +6,7 @@ async function Friends() {
 
   return (
     <div className="pb-10 px-5">
-      <div className="text-2xl font-semibold pb-3 text-[#1F2937]">
+      <div className="text-2xl font-semibold pb-3 text-[#1F2937] dark:text-white">
         Your Friends
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
