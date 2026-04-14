@@ -10,7 +10,6 @@ import { LuChartSpline } from "react-icons/lu";
 function NavBar() {
   const currentPath = usePathname();
 
-  console.log("Current Path:", currentPath);
 
   const navLinks = (
     <div className="flex flex-col lg:flex-row gap-3 lg:gap-5">

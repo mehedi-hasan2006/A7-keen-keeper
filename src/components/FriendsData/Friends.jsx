@@ -1,9 +1,12 @@
-
-
-function Friends() {
+async function Friends() {
+  // const res = await fetch("/friends.json");
+  // const data = await res.json();
+  // console.log(data);
   return (
-    <div>Friends</div>
-  )
+    <div>
+      {/* <div>{data.map((friend) => console.log(friend))}</div> */}
+    </div>
+  );
 }
 
-export default Friends
+export default Friends;
