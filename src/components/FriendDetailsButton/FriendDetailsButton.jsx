@@ -10,11 +10,9 @@ function FriendDetailsButton({ friend }) {
   const { friendData, setFriendData, selectedTimeline, setSelectedTimeline } =
     useContext(ButtonContext);
 
-  console.log(friendData);
-
   const handleCallButton = () => {
-    setFriendData([...friendData, friend]);
-    setSelectedTimeline("Call");
+    setFriendData([...friendData, { ...friend, type: "Call" }]);
+
     toast.success(`You have called ${friend.name}!`, {
       position: "top-center",
       autoClose: 3000,
@@ -22,8 +20,8 @@ function FriendDetailsButton({ friend }) {
   };
 
   const handleTextButton = () => {
-    setFriendData([...friendData, friend]);
-    setSelectedTimeline("Text");
+    setFriendData([...friendData, { ...friend, type: "Text" }]);
+
     toast.success(`You have texted ${friend.name}!`, {
       position: "top-center",
       autoClose: 3000,
@@ -31,8 +29,8 @@ function FriendDetailsButton({ friend }) {
   };
 
   const handleVideoButton = () => {
-    setFriendData([...friendData, friend]);
-    setSelectedTimeline("Video");
+    setFriendData([...friendData, { ...friend, type: "Video" }]);
+
     toast.success(`You have started a video call with ${friend.name}!`, {
       position: "top-center",
       autoClose: 3000,
