@@ -2,9 +2,9 @@ import Image from "next/image";
 import { FiArchive } from "react-icons/fi";
 import { MdOutlineNotificationsPaused } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
-import { TbPhoneCall } from "react-icons/tb";
-import { BsChatText } from "react-icons/bs";
-import { IoVideocamOutline } from "react-icons/io5";
+
+import NotFound from "@/app/not-found";
+import FriendDetailsButton from "@/components/FriendDetailsButton/FriendDetailsButton";
 
 async function FriendDetailsPage({ params }) {
   const { id } = await params;
@@ -27,7 +27,7 @@ async function FriendDetailsPage({ params }) {
 
   return (
     <div className="bg-[#F8FAFC] dark:bg-gray-900">
-      {friend && (
+      {friend ? (
         <div className="max-w-285 mx-auto my-10 grid grid-cols-1 md:grid-cols-12 gap-6 px-5">
           <div className=" col-span-12 md:col-span-4">
             <div className="bg-white dark:bg-gray-800 shadow-md rounded-md  py-5">
@@ -73,15 +73,12 @@ async function FriendDetailsPage({ params }) {
 
             <div className="flex flex-col gap-4 mt-5">
               <button className="btn bg-white dark:bg-gray-800">
-                {" "}
-                <MdOutlineNotificationsPaused /> Primary
+                <MdOutlineNotificationsPaused /> Snooze 2 weeks
               </button>
               <button className="btn bg-white dark:bg-gray-800">
-                {" "}
-                <FiArchive /> Primary
+                <FiArchive /> Archive
               </button>
               <button className="btn bg-white dark:bg-gray-800 text-red-500">
-                {" "}
                 <MdDeleteOutline /> Delete{" "}
               </button>
             </div>
@@ -134,35 +131,13 @@ async function FriendDetailsPage({ params }) {
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-md shadow mt-5 py-8 px-4">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-xl font-semibold text-[#244D3F] dark:text-gray-200  mb-3">
-                    Quick Check-In
-                  </h2>
-                </div>
-                <div className="grid lg:grid-cols-3 gap-5">
-                  <div className="flex flex-col items-center justify-center p-5 bg-gray-100 dark:bg-gray-700 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-                    <p>
-                      <TbPhoneCall />
-                    </p>
-                    <p>Call</p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center p-5  bg-gray-100 dark:bg-gray-700 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-                    <p>
-                      <BsChatText />
-                    </p>
-                    <p>Text</p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center p-5 bg-gray-100 dark:bg-gray-700 rounded-md cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-                    <p>
-                      <IoVideocamOutline />
-                    </p>
-                    <p>Video</p>
-                  </div>
-                </div>
+                <FriendDetailsButton friend={friend} />
               </div>
             </div>
           </div>
         </div>
+      ) : (
+        <NotFound></NotFound>
       )}
     </div>
   );

@@ -2,18 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Friend({ friend }) {
-  const {
-    id,
-    name,
-    picture,
-    email,
-    status,
-    tags,
-    bio,
-    goal,
-    next_due_date,
-    days_since_contact,
-  } = friend;
+  const { id, name, picture, status, tags, days_since_contact } = friend;
   return (
     <Link href={`/frienddetails/${id}`}>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 text-center transition-transform transform duration-300 hover:scale-105">
