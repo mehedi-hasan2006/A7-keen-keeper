@@ -13,7 +13,7 @@ export const metadata = {
 async function FriendDetailsPage({ params }) {
   const { id } = await params;
 
-  const res = await fetch("http://localhost:3000/friends.json", {
+  const res = await fetch("https://keen-keeper-bay.vercel.app/friends.json", {
     cache: "no-store",
   });
   const data = await res.json();

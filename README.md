@@ -10,7 +10,7 @@
 [![DaisyUI](https://img.shields.io/badge/DaisyUI-5.x-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)](https://daisyui.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-[🚀 Live Demo](#) &nbsp;|&nbsp; [📖 Documentation](#) &nbsp;|&nbsp; [🐛 Report Bug](https://github.com/mehedi-hasan2006/A7-keen-keeper/issues) &nbsp;|&nbsp; [✨ Request Feature](https://github.com/mehedi-hasan2006/A7-keen-keeper/issues)
+[🚀 Live Demo](https://keen-keeper-bay.vercel.app/) &nbsp;|&nbsp; [📖 Documentation](#) &nbsp;|&nbsp; [🐛 Report Bug](https://github.com/mehedi-hasan2006/A7-keen-keeper/issues) &nbsp;|&nbsp; [✨ Request Feature](https://github.com/mehedi-hasan2006/A7-keen-keeper/issues)
 
 </div>
 
@@ -37,18 +37,16 @@
 
 ## 🧠 About the Project
 
-**Keen Keeper** is a sleek and intuitive productivity web application designed to help you stay organized and on top of your goals. Built with the latest versions of Next.js and React, it leverages server-side rendering, modern UI components, and interactive data visualizations to deliver a seamless user experience.
-
-Whether you're tracking daily tasks, monitoring progress over time, or managing complex workflows — Keen Keeper keeps you sharp and in control.
+**Keen Keeper** is a sleek and intuitive productivity web application designed to help you stay connected to your friend and on top of your friendship goals. Built with the latest versions of Next.js and React, it leverages server-side rendering, modern UI components, and interactive data visualizations to deliver a seamless user experience.
 
 ---
 
 ## ✨ Features
 
-- 📊 **Interactive Charts** — Visualize your productivity and data trends using Recharts
+- 📊 **Interactive Charts** — Visualize productivity and data trends using Recharts
 - 🔔 **Toast Notifications** — Real-time feedback via React Toastify
-- 💅 **Beautiful UI** — Crafted with DaisyUI components on top of Tailwind CSS v4
-- ⚡ **Blazing Fast** — Powered by Next.js 16 App Router with React 19
+- 💅 **Beautiful UI** — Crafted with DaisyUI components on top of Tailwind CSS
+- ⚡ **Blazing Fast** — Powered by Next.js App Router with React
 - 📱 **Fully Responsive** — Mobile-first design that works on all screen sizes
 - 🎨 **Theming Support** — Light/Dark mode via DaisyUI theming system
 - 🔄 **Loading States** — Smooth spinners powered by React Spinners
@@ -58,16 +56,16 @@ Whether you're tracking daily tasks, monitoring progress over time, or managing 
 
 ## 🛠 Tech Stack
 
-| Category | Technology |
-|---|---|
-| **Framework** | [Next.js 16](https://nextjs.org/) |
-| **UI Library** | [React 19](https://react.dev/) |
-| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) + [DaisyUI v5](https://daisyui.com/) |
-| **Charts** | [Recharts v3](https://recharts.org/) |
-| **Icons** | [React Icons v5](https://react-icons.github.io/react-icons/) |
-| **Notifications** | [React Toastify v11](https://fkhadra.github.io/react-toastify/) |
-| **Loaders** | [React Spinners](https://www.davidhu.io/react-spinners/) |
-| **Linting** | [ESLint 9](https://eslint.org/) |
+| Category          | Technology                                                                       |
+| ----------------- | -------------------------------------------------------------------------------- |
+| **Framework**     | [Next.js 16](https://nextjs.org/)                                                |
+| **UI Library**    | [React 19](https://react.dev/)                                                   |
+| **Styling**       | [Tailwind CSS v4](https://tailwindcss.com/) + [DaisyUI v5](https://daisyui.com/) |
+| **Charts**        | [Recharts v3](https://recharts.org/)                                             |
+| **Icons**         | [React Icons v5](https://react-icons.github.io/react-icons/)                     |
+| **Notifications** | [React Toastify v11](https://fkhadra.github.io/react-toastify/)                  |
+| **Loaders**       | [React Spinners](https://www.davidhu.io/react-spinners/)                         |
+| **Linting**       | [ESLint 9](https://eslint.org/)                                                  |
 
 ---
 
@@ -89,7 +87,19 @@ A7-keen-keeper/
 └── README.md
 ```
 
----
+## 📜 UI (User Interface)
+
+<p>Home Page </p>
+<image src="./src/assets/ui/home.png">
+
+<p> Friend Details Page </p>
+<image src="./src/assets/ui/details.png">
+
+<p>Timeline Page </p>
+<image src="./src/assets/ui/timeline.png">
+
+<p>Stats Page </p>
+<image src="./src/assets/ui/stats.png">
 
 ## 🚀 Getting Started
 
@@ -119,7 +129,6 @@ yarn install
 pnpm install
 ```
 
-
 ### Running the App
 
 Start the development server:
@@ -142,12 +151,12 @@ The app supports **hot module replacement** — changes to `src/app/page.js` wil
 
 ## 📜 Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Build the app for production |
-| `npm run start` | Start the production server |
-| `npm run lint` | Run ESLint to check for code issues |
+| Command         | Description                              |
+| --------------- | ---------------------------------------- |
+| `npm run dev`   | Start development server with hot reload |
+| `npm run build` | Build the app for production             |
+| `npm run start` | Start the production server              |
+| `npm run lint`  | Run ESLint to check for code issues      |
 
 ---
 
