@@ -10,27 +10,26 @@ import { LuChartSpline } from "react-icons/lu";
 function NavBar() {
   const currentPath = usePathname();
 
-
   const navLinks = (
     <div className="flex flex-col lg:flex-row gap-3 lg:gap-5">
       <li
-        className={`flex items-center rounded-md p-1 font-semibold    text-[#64748B] ${currentPath === "/" ? "text-white bg-green-800" : ""}`}
+        className={`flex items-center rounded-md p-1 font-semibold  hover:bg-gray-200 hover:text-black text-[#64748B] ${currentPath === "/" ? "text-white bg-green-800" : ""}`}
       >
-        <Link href="/">
+        <Link className="hover:bg-gray-200" href="/">
           <RiHome2Line /> Home
         </Link>
       </li>
       <li
-        className={`flex items-center rounded-md p-1 font-semibold   text-[#64748B] ${currentPath === "/timeline" ? "text-white bg-green-800" : ""}`}
+        className={`flex items-center rounded-md p-1 font-semibold hover:bg-gray-200 hover:text-black  text-[#64748B] ${currentPath === "/timeline" ? "text-white bg-green-800" : ""}`}
       >
-        <Link href="/timeline">
+        <Link className="hover:bg-gray-200" href="/timeline">
           <LuClock3 /> Timeline
         </Link>
       </li>
       <li
-        className={`flex items-center rounded-md p-1 font-semibold   text-[#64748B] ${currentPath === "/stats" ? "text-white bg-green-800" : ""}`}
+        className={`flex items-center rounded-md p-1 font-semibold hover:bg-gray-200 hover:text-black  text-[#64748B] ${currentPath === "/stats" ? "text-white bg-green-800" : ""}`}
       >
-        <Link href="/stats">
+        <Link className="hover:bg-gray-200" href="/stats">
           <LuChartSpline /> Stats
         </Link>
       </li>
@@ -65,10 +64,12 @@ function NavBar() {
               {navLinks}
             </ul>
           </div>
-          <Image src={Logo} alt="Keen Keeper Logo" loading="eager" />
+          <Link href="/">
+            <Image src={Logo} alt="Keen Keeper Logo" loading="eager" />
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal">{navLinks}</ul>
+          <ul className="menu menu-horizontal ">{navLinks}</ul>
         </div>
       </div>
     </nav>

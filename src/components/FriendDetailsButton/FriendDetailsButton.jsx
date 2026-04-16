@@ -7,8 +7,7 @@ import { ButtonContext } from "@/context/ButtonContext";
 import { toast } from "react-toastify";
 
 function FriendDetailsButton({ friend }) {
-  const { friendData, setFriendData, selectedTimeline, setSelectedTimeline } =
-    useContext(ButtonContext);
+  const { friendData, setFriendData } = useContext(ButtonContext);
 
   const handleCallButton = () => {
     setFriendData([...friendData, { ...friend, type: "Call" }]);
