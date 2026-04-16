@@ -2,14 +2,20 @@ import Image from "next/image";
 import { FiArchive } from "react-icons/fi";
 import { MdOutlineNotificationsPaused } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
-
 import NotFound from "@/app/not-found";
 import FriendDetailsButton from "@/components/FriendDetailsButton/FriendDetailsButton";
+
+export const metadata = {
+  title: "Friend Details | Keen Keeper",
+  description: "A Friend to Keep Your Keen Insights",
+};
 
 async function FriendDetailsPage({ params }) {
   const { id } = await params;
 
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch("http://localhost:3000/friends.json", {
+    cache: "no-store",
+  });
   const data = await res.json();
   const friend = data.find((f) => f.id === parseInt(id));
 

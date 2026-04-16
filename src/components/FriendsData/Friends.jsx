@@ -1,7 +1,9 @@
 import Friend from "./Friend";
 
 async function Friends() {
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch("http://localhost:3000/friends.json", {
+    cache: "no-store",
+  });
   const data = await res.json();
 
   return (
