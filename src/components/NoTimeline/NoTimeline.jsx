@@ -2,7 +2,7 @@ import React from "react";
 
 function NoTimeline() {
   return (
-    <div className="text-center py-10">
+    <div className="text-center py-30">
       <h1 className="text-3xl font-bold text-[#244D3F] dark:text-gray-200 mb-5">
         {" "}
         No Timeline Available
